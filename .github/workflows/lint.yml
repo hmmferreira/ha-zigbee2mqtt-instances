@@ -3,6 +3,9 @@ name: Lint apps
 on:
   push:
   pull_request:
+  schedule:
+    - cron: "47 5 * * *"
+  workflow_dispatch:
 
 jobs:
   lint:

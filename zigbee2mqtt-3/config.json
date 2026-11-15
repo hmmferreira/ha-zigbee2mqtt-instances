@@ -9,7 +9,6 @@
   "uart": true,
   "udev": true,
   "url": "https://github.com/hmmferreira/ha-zigbee2mqtt-instances/tree/main/zigbee2mqtt-3",
-  "startup": "application",
   "services": [
     "mqtt:need"
   ],
@@ -18,7 +17,6 @@
     "aarch64",
     "amd64"
   ],
-  "boot": "auto",
   "init": false,
   "ingress": true,
   "timeout": 30,

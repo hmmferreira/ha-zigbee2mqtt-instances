@@ -6,6 +6,7 @@ Changes made by scripts/sync.py, per instance:
 - name, slug, panel_title, description and url changed so the copy installs alongside the official app
 - default options.data_path changed to /config/zigbee2mqtt_<n>
 - host port mappings removed (set to null) so copies don't collide on port 8485
+- `boot` and `startup` removed when they hold the Supervisor default values (no change in behaviour)
 - a preamble added at the top of DOCS.md; README.md replaced
 
 The container image, version, options schema and everything else are unchanged.

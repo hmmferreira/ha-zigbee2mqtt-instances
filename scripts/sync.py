@@ -69,6 +69,10 @@ def instance_config(upstream: dict, n: int) -> dict:
     cfg["options"]["data_path"] = f"/config/zigbee2mqtt_{n}"
     # The official app publishes the socat port on host port 8485; only one app can.
     cfg["ports"] = {port: None for port in cfg["ports"]}
+    # Keys set to their Supervisor default; dropping them changes nothing and keeps the linter quiet.
+    for key, default in (("boot", "auto"), ("startup", "application")):
+        if cfg.get(key) == default:
+            del cfg[key]
     return cfg
 
 

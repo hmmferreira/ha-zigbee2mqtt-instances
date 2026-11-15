@@ -25,17 +25,8 @@ jobs:
         id: gen
         run: echo "version=$(python3 scripts/sync.py)" >> "$GITHUB_OUTPUT"
 
-      # Lint before committing, so a broken copy never reaches users
-      - uses: frenck/action-addon-linter@v2
-        with:
-          path: ./zigbee2mqtt-2
-      - uses: frenck/action-addon-linter@v2
-        with:
-          path: ./zigbee2mqtt-3
-      - uses: frenck/action-addon-linter@v2
-        with:
-          path: ./zigbee2mqtt-4
-
+      # scripts/sync.py already refuses to generate if the official app changed shape.
+      # The add-on linter runs separately (lint.yml) so style nits can't block updates.
       - name: Commit if anything changed
         env:
           VERSION: ${{ steps.gen.outputs.version }}
