@@ -1,0 +1,12 @@
+The app definitions, documentation and images in zigbee2mqtt-*/ are generated from
+the official Zigbee2MQTT Home Assistant app:
+https://github.com/zigbee2mqtt/hassio-zigbee2mqtt (Apache License 2.0, see LICENSE).
+
+Changes made by scripts/sync.py, per instance:
+- name, slug, panel_title, description and url changed so the copy installs alongside the official app
+- default options.data_path changed to /config/zigbee2mqtt_<n>
+- host port mappings removed (set to null) so copies don't collide on port 8485
+- a preamble added at the top of DOCS.md; README.md replaced
+
+The container image, version, options schema and everything else are unchanged.
+This project is not affiliated with or endorsed by the Zigbee2MQTT project.
